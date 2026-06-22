@@ -10,3 +10,111 @@ from sklearn.metrics import (
 2. How draw dataset.csv in matplot lib and undersatnd the x, y-axis data using graph.
 3. Which model we used to train dataset for Hand Gesture Word requiment.
 4. How you have created your dataset and prepared dataset.csv.
+5.What is OpenCV?
+
+    OpenCV (Open Source Computer Vision Library) is an open-source library used for:
+
+    Reading images
+    Reading videos
+    Accessing webcams
+    Processing images
+    Detecting objects
+    Drawing shapes
+    AI preprocessing
+    Computer Vision applications
+
+    Think of OpenCV as the eyes of your application.
+
+    Without OpenCV:
+    Your AI Model
+     ↑
+    No Image
+
+
+    With OpenCV:
+    Camera
+    │
+    ▼
+    OpenCV
+    │
+    ▼
+    Image Frame
+    │
+    ▼
+    MediaPipe / AI Model
+
+->  Application flow is:
+    Webcam
+    │
+    ▼
+    OpenCV
+    │
+    ▼
+    Video Frame
+    │
+    ▼
+    MediaPipe
+    │
+    ▼
+    21 Hand Landmarks
+    │
+    ▼
+    Random Forest Model
+    │
+    ▼
+    Gesture Name
+    │
+    ▼
+    Text To Speech    
+
+->  OpenCV is responsible only for:
+
+    Opening webcam
+    Capturing frames
+    Drawing text
+    Showing processed images
+
+->  OpenCV Modules
+
+    Module	            Purpose	        Used in Your Project?
+    cv2.VideoCapture	Webcam access	✅ Yes
+    cv2.imread	        Read image	    ❌ Not yet
+    cv2.imwrite	        Save image	    ❌ Not yet
+    cv2.cvtColor	    Color conversion✅ Yes
+    cv2.flip	        Mirror image	✅ Yes
+    cv2.putText	        Draw text	    ✅ Yes
+
+-> What is MediaPipe?
+    MediaPipe is an open-source framework developed by Google for building real-time AI pipelines.
+
+    It can detect:
+    ✋ Hands
+    😀 Face
+    🧍 Human Pose
+    👁 Iris
+    🤳 Selfie Segmentation
+    📦 Object Detection (with other models)
+
+    Think of MediaPipe as a real-time AI detector.
+
+->  App data flow:
+    Camera
+    │
+    ▼
+    OpenCV
+    │
+    ▼
+    RGB Frame
+    │
+    ▼
+    MediaPipe Hands
+    │
+    ▼
+    21 Hand Landmarks
+    │
+    ▼
+    Random Forest
+    │
+    ▼
+    Gesture Name
+    
